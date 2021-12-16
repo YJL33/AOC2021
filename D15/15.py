@@ -2,7 +2,6 @@ import heapq
 
 f = open("D15/input15", "r")
 lines = f.read().split('\n')
-# print(lines)
 
 # 15A
 r1 = [[int(lines[i][j]) for j in range(len(lines[0]))] for i in range(len(lines))]
@@ -20,7 +19,7 @@ for j in range(1,5):
         tmp += [(r[i]+j)-9 if (r[i]+j)>9 else r[i]+j for i in range(len(r))],
 r2 += tmp
 
-# use DFS + heap
+# use Dijkstra
 def finder(risks):
     print('H, W', len(risks), len(risks[0]))
     bestSeen = [[float('inf') for _ in range(len(risks[0]))] for _ in range(len(risks))]
